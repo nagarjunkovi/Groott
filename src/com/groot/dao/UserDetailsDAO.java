@@ -1,7 +1,5 @@
 package com.groot.dao;
 
-import java.util.List;
-
 import javax.sql.DataSource;
 
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -21,7 +19,7 @@ public class UserDetailsDAO {
 	}
 
 	public UserLogin getUserDetails(String userID){
-		String SQL = "select * from userdetails where UserID = ?";
+		String SQL = "select * from user_details where User_Name = ?";
 		UserLogin userDetails = null;
 		try{
 			userDetails = jdbcTemplateObject.queryForObject(SQL,new Object[]{userID},new UserDetailsMapper());
@@ -31,8 +29,9 @@ public class UserDetailsDAO {
 		return userDetails;
 	}
 
-	public void insertUserDetails(){
-		String SQL = "INSERT INTO userdetails (UserName,Password,Email,UserID) VALUES(?,?,?,?)";
-		jdbcTemplateObject.update(SQL, "Ashok","intel@01","nkovi2020@gmail.com","");
+	public int insertUserDetails(UserLogin userLogin){
+		String SQL = "INSERT INTO userdetails (User_Name,Password,First_Name,Last_Name,Email_Address,Phone_Number) VALUES(?,?,?,?,?,?)";
+		int i = jdbcTemplateObject.update(SQL, userLogin.getUserName(),userLogin.getPassword(),userLogin.getFirstName(),userLogin.getLastName(),userLogin.getEmail(),userLogin.getPhoneNumber());
+		return i;
 	}
 }

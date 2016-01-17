@@ -11,8 +11,8 @@
 <form:form method="POST" action="/Groott/login.htm" modelAttribute="loginParam">
    <table>
     <tr>
-        <td><form:label path="userID">UserID</form:label></td>
-        <td><form:input path="userID"/></td>
+        <td><form:label path="userName">userName</form:label></td>
+        <td><form:input path="userName"/></td>
     </tr>
     <tr>
         <td><form:label path="password">password</form:label></td>

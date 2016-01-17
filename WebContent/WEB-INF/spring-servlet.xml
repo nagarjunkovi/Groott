@@ -6,10 +6,8 @@
         http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context-3.0.xsd">
-
-
+        
 	<context:component-scan base-package="com.groot" />
-
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<property name="viewClass"
@@ -17,19 +15,4 @@
 		<property name="prefix" value="/WEB-INF/views/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
-
-	<bean id="dataSource"
-		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3303/TEST" />
-		<property name="username" value="root" />
-		<property name="password" value="intel@01" />
-	</bean>
-	<bean id="UserDetailsDAO" class="com.groot.dao.UserDetailsDAO">
-		 <property name="dataSource"  ref="dataSource" />  
-	</bean>
-	
-	<bean id="UserDetailsFacade" class="com.groot.facade.UserDetailsFacade">
-	</bean>
-	
 </beans>

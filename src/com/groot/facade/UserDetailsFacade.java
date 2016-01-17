@@ -10,11 +10,11 @@ import com.groot.dao.UserDetailsDAO;
 public class UserDetailsFacade {
 
 	@Autowired
-	private UserDetailsDAO UserDetailsDAO;
+	private UserDetailsDAO userDetailsDAO;
 	
 	public UserLogin getUserDetails(String userID){
 		System.out.println("Facade called");
-		UserLogin userDetails=  UserDetailsDAO.getUserDetails(userID);
+		UserLogin userDetails=  userDetailsDAO.getUserDetails(userID);
 		return userDetails;
 	}
 }
