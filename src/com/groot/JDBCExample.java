@@ -23,7 +23,7 @@ public class JDBCExample {
 
 			try {
 				connection = DriverManager
-				.getConnection("jdbc:mysql://localhost:3303/test","root", "intel@01");
+				.getConnection("jdbc:mysql://localhost:3306/test","root", "root");
 
 			} catch (SQLException e) {
 				System.out.println("Connection Failed! Check output console");
