@@ -26,3 +26,23 @@ CREATE TABLE `groot`.`address` (
     REFERENCES `groot`.`user_details` (`User_Name`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
+    
+CREATE TABLE `groot`.`category` (
+  `category_id` VARCHAR(55) NOT NULL,
+  `category_name` VARCHAR(55) NOT NULL,
+  PRIMARY KEY (`category_id`));
+  
+CREATE TABLE `groot`.`products` (
+  `product_id` VARCHAR(55) NOT NULL,
+  `product_name` VARCHAR(55) NOT NULL,
+  `product_price` DOUBLE NOT NULL,
+  `categoryID` VARCHAR(45) NULL,
+  PRIMARY KEY (`product_id`),
+  INDEX `categoryID_idx` (`categoryID` ASC),
+  CONSTRAINT `categoryID`
+    FOREIGN KEY (`categoryID`)
+    REFERENCES `groot`.`category` (`category_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+

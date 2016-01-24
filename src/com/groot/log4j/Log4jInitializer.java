@@ -19,7 +19,7 @@ public class Log4jInitializer extends HttpServlet {
 	@Override
 	public void init() throws ServletException {
 		super.init();
-		String log4jConfigFile = "E:/Java/log4j.properties";
+		String log4jConfigFile = "D:/log4j.properties";
 		PropertyConfigurator.configure(log4jConfigFile);
 	}
     public Log4jInitializer() {
