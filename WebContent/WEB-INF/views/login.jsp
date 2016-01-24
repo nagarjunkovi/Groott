@@ -25,5 +25,6 @@
     </tr>
 </table>  
 </form:form>
+<a href="/Groott/addUser.htm">Add User</a>
 </body>
 </html>

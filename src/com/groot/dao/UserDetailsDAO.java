@@ -30,7 +30,7 @@ public class UserDetailsDAO {
 	}
 
 	public int insertUserDetails(UserLogin userLogin){
-		String SQL = "INSERT INTO userdetails (User_Name,Password,First_Name,Last_Name,Email_Address,Phone_Number) VALUES(?,?,?,?,?,?)";
+		String SQL = "INSERT INTO user_details (User_Name,Password,First_Name,Last_Name,Email_Address,Phone_Number) VALUES(?,?,?,?,?,?)";
 		int i = jdbcTemplateObject.update(SQL, userLogin.getUserName(),userLogin.getPassword(),userLogin.getFirstName(),userLogin.getLastName(),userLogin.getEmail(),userLogin.getPhoneNumber());
 		return i;
 	}

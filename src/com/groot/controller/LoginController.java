@@ -40,4 +40,19 @@ public class LoginController {
 		modal.put("userDetails", userDetails);
 		return "main";
 	}
+	
+	@RequestMapping(value="/addUser", method=RequestMethod.GET)
+	public ModelAndView  addUser(){
+		logger.info("addUser Called");
+		return new ModelAndView("addUser", "addUserBean", new UserLogin());
+	}
+	
+	@RequestMapping(value="/addUser", method=RequestMethod.POST)
+	public String  addUser(UserLogin userDetails, ModelMap modal, HttpServletRequest request){
+		logger.info("addUser Called Post");
+		int i = userDetailsFacade.addUserDetails(userDetails);
+		System.out.println(i);
+		modal.put("userDetails", userDetails);
+		return "main";
+	}
 }

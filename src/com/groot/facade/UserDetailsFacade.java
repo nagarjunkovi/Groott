@@ -17,4 +17,10 @@ public class UserDetailsFacade {
 		UserLogin userDetails=  userDetailsDAO.getUserDetails(userID);
 		return userDetails;
 	}
+	
+	public int addUserDetails(UserLogin userDetails){
+		System.out.println("Facade called");
+		int i =  userDetailsDAO.insertUserDetails(userDetails);
+		return i;
+	}
 }
